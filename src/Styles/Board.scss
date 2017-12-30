@@ -1,0 +1,27 @@
+
+   .board {
+      background-color: black;
+      display: inline-block;
+      margin-top: 50px;
+      border-top: 1px solid #999;
+      border-left: 1px solid #999;
+      padding: 10px;
+      background-color: #555;
+
+   }
+   .rowrow {
+      line-height: 5px;
+      overflow: hidden
+   }
+   .cell {
+      display: inline-block;
+      border-right: 1px solid #555;
+      border-bottom: 1px solid #555;
+      width: 11px;
+      height: 11px;
+      background-color: #000;
+
+   }
+   .alive {
+      background-color: white;
+   }

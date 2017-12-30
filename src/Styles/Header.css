@@ -1,0 +1,12 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  header * {
+    flex-basis: 33%; }
+  header h1 {
+    margin-top: 10px; }
+  header .btn-link {
+    color: white; }
+    header .btn-link:hover {
+      color: white; }

@@ -1,0 +1,14 @@
+
+
+const DEFAULT = {
+   ROWS:25,
+   COLUMNS:45,
+   RANDOM_RATE:30,
+   BORN_MIN: 3,
+   BORN_MAX: 3,
+   EXIST_MIN:2,
+   EXIST_MAX:3,
+   LIFESPAN_MS:1000
+}
+
+export default DEFAULT
