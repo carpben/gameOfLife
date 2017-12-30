@@ -6,8 +6,9 @@ import {connect} from 'react-redux'
 const Row = ({row}) => {
    return (
       <div className="rowrow">
+
          {
-            row.map( (alive, inx) => <div className={`cell ${alive? "alive" : ""}`} key={inx}></div> )
+            row.map( (being, inx) => <div className={`cell ${being===2? "adult" : being===1? "young" : ""}`} key={inx}></div> )
          }
       </div>
    )

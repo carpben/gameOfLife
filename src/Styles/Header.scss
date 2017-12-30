@@ -4,15 +4,16 @@ header {
    align-items: center;
 
    * {
-      flex-basis: 33%;
+      flex-basis: 30%;
    }
    h1 {
+      flex-basis: 40%;
       margin-top: 10px
    }
    .btn-link {
       color: white;
       &:hover{
-         color: white; 
+         color: white;
       }
    }
 }

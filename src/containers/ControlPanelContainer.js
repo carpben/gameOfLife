@@ -5,9 +5,10 @@ import {changeRows, changeColumns, createNewBoard, changeRandomRate, setLifeSpan
 import React from 'react'
 import { withStyles } from 'material-ui/styles';
 import TextField from 'material-ui/TextField';
+import MenuItem from 'material-ui/Menu/MenuItem';
 import '../Styles/ControlPanel.css'
 import Button from 'material-ui/Button';
-import DEFAULT from '../CONSTS'
+import {DEFAULT, ADULT_COLORS_OPTIONS} from '../CONSTS'
 
 const styles = theme => ({
   container: {
@@ -29,7 +30,7 @@ const styles = theme => ({
 });
 
 let ControlPanel = ({rows, columns, lifeSpan, randomRate, running, changeRows, changeColumns, setLifeSpan,
-   bornMin, bornMax, existMin, existMax, createNewBoard,
+   bornMin, bornMax, existMin, existMax, adultColor, createNewBoard,
    changeRandomRate, populateRandomBoard, start,pause, classes}) => {
       const startButton = (
          <Button raised color="primary" className={classes.button} onClick={start}>
@@ -100,7 +101,7 @@ let ControlPanel = ({rows, columns, lifeSpan, randomRate, running, changeRows, c
 
             </section>
             <section className="generation-length">
-               <h3>lifeSpan</h3>
+               <h3>GenerationSpan</h3>
                   <small>Default: {DEFAULT.LIFESPAN_MS}ms</small>
                   <TextField
                      id="number"
@@ -175,6 +176,28 @@ let ControlPanel = ({rows, columns, lifeSpan, randomRate, running, changeRows, c
                      }}
                      margin="normal"
                   />
+            </section>
+            <section>
+               <TextField
+                  select
+                  label="Select"
+                  className={classes.textField}
+                  value={adultColor}
+                  onChange={ () => {} }
+                  SelectProps={{
+                  MenuProps: {
+                     className: classes.menu,
+                  },
+                  }}
+                  helperText="Please select your currency"
+                  margin="normal"
+                  >
+                  {Object.values(ADULT_COLORS_OPTIONS).map(color => (
+                  <MenuItem key={color} value={color}>
+                     {color}
+                  </MenuItem>
+                  ))}
+               </TextField>
             </section>
 
 

@@ -20,8 +20,12 @@
       width: 11px;
       height: 11px;
       background-color: #000;
+      &.young {
+         background-color: #888;
+      }
+      &.adult {
+         background-color: #fff;
+      }
 
-   }
-   .alive {
-      background-color: white;
+
    }

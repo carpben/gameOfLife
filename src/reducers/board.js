@@ -1,11 +1,11 @@
-import DEFAULT from '../CONSTS'
+import {DEFAULT} from '../CONSTS'
 
 const getNewBoard = (rows, columns) => {
    let board = []
    for (let i=0 ; i<rows ; i++){
       let row = []
       for (let j=0 ; j<columns ; j++){
-         row.push(false)
+         row.push(0)
       }
       board.push(row)
    }
@@ -28,14 +28,12 @@ const board = (state = init, action) => {
          const columns =state[0].length
          let newBoard = getNewBoard(rows, columns)
          const randomRate = action.randomRate/100
-         newBoard = newBoard.map( row => row.map( aliveBol => Math.random()<randomRate? true : false ))
+         newBoard = newBoard.map( row => row.map( aliveBol => Math.random()<randomRate? 1 : 0 ))
          return newBoard
       }
       case "NEXT_GENERATION": {
          const {bornMin, bornMax, existMin, existMax} = action
          const board = state
-         console.log(`bornMin=${bornMin} bornMax=${bornMax} existMin=${existMin} existMax=${existMax}`)
-         console.log(`board=${board}`)
 
          const newBoard = board.map( (row, rowInx) => {
             let newRow = row.map( (alive, colInx) => {
@@ -51,12 +49,12 @@ const board = (state = init, action) => {
                   }
                }
                if (alive && (existMin<=counter && counter<=existMax)){
-                  return true
+                  return 2
                }
                if (!alive && (bornMin<=counter && counter<=bornMax) ){
-                  return true
+                  return 1
                }
-               return false
+               return 0
             });
             return newRow;
          })

@@ -1,4 +1,4 @@
-import DEFAULT from '../CONSTS'
+import {DEFAULT} from '../CONSTS'
 
 const init = {
    rows: DEFAULT.ROWS,
@@ -8,11 +8,11 @@ const init = {
    bornMax: DEFAULT.BORN_MIN,
    existMin: DEFAULT.EXIST_MIN,
    existMax: DEFAULT.EXIST_MAX,
-   lifeSpan: DEFAULT.LIFESPAN_MS
+   lifeSpan: DEFAULT.LIFESPAN_MS,
+   adultColor: DEFAULT.ADULT_COLOR
 }
 
 const settings = (state=init, action) => {
-   console.log(`redset, bornMin=${state.bornMin}`)
    switch (action.type) {
       case "CHANGE_ROWS":
          const rows = action.val

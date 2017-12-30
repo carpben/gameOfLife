@@ -3,8 +3,9 @@ header {
   justify-content: space-between;
   align-items: center; }
   header * {
-    flex-basis: 33%; }
+    flex-basis: 30%; }
   header h1 {
+    flex-basis: 40%;
     margin-top: 10px; }
   header .btn-link {
     color: white; }
