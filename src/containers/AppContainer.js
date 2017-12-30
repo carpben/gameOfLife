@@ -6,8 +6,7 @@ import ControlPanelContainer from './ControlPanelContainer'
 import '../Styles/App.css';
 import BoardContainer from './BoardContainer'
 import ConsoleContiner from './ConsoleContainer'
-import ControlPanel2 from '../components/ControlPanel2'
-
+// import ControlPanel2 from '../components/ControlPanel2'
 
 import { withStyles } from 'material-ui/styles';
 import Drawer from 'material-ui/Drawer';
