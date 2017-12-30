@@ -89,13 +89,13 @@ class App extends Component {
     return (
       <div className="App">
          {drawer}
-         <div>
+         <main>
             <HeaderContainer />
             <ControlPanelContainer />
             <ConsoleContiner />
             <BoardContainer />
             {this.props.displayAbout? <AboutDrawerContainer toggleAboutDrawer={this.props.toggleAboutDrawer} /> : "" }
-         </div>
+         </main>
       </div>
     );
   }
