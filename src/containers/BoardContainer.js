@@ -1,34 +1,50 @@
 import React from 'react'
 import '../Styles/Board.css'
+import {cellClicked} from '../actions'
 
 import {connect} from 'react-redux'
 
-const Row = ({row}) => {
+const Row = ({row, rowIndex, cellClicked}) => {
    return (
       <div className="rowrow">
 
          {
-            row.map( (being, inx) => <div className={`cell ${being===2? "adult" : being===1? "young" : ""}`} key={inx}></div> )
+            row.map( (being, colIndex) => (
+               <div className={`cell ${being===2? "adult" : being===1? "young" : ""}`}
+                  onClick={ () =>{
+                     console.log(11)
+                     return cellClicked(rowIndex, colIndex)
+                  }}  key={colIndex}>
+               </div>
+            ))
          }
       </div>
    )
 }
 
-const Board = ({board}) => {
+const Board = ({board, adultColor, cellClicked}) => {
    return (
-         <div className="board">
-            {board.map( (row, inx) => {
-               return <Row row={row} key={inx} />
+         <div className={`board adult-color-${adultColor}`}>
+            {board.map( (row, rowIndex) => {
+               return <Row row={row} rowIndex={rowIndex} cellClicked={cellClicked} key={rowIndex}/>
             } )}
          </div>
    )
 }
 
-const mapStateToProps = state => ({
-   board:state.board
+const mapDispatchToProps = dispatch => ({
+   cellClicked: (rowIndex, colIndex) => {
+      console.log(12)
+      return dispatch(cellClicked(rowIndex, colIndex))
+   }
 })
 
-const BoardContainer = connect(mapStateToProps)(Board)
+const mapStateToProps = state => ({
+   board:state.board,
+   adultColor: state.settings.adultColor
+})
+
+const BoardContainer = connect(mapStateToProps, mapDispatchToProps)(Board)
 
 
 

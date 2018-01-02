@@ -1,14 +1,18 @@
 header {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-
-   * {
-      flex-basis: 30%;
+   padding: 20px 0;
+   background-color: black;
+   .inner-w {
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      width: 750px;
    }
+
    h1 {
-      flex-basis: 40%;
-      margin-top: 10px
+      margin-top: 10px;
+      color: white;
+      font-weight: bold;
+      display: inline-block;
    }
    .btn-link {
       color: white;

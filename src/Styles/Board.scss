@@ -1,14 +1,11 @@
 
-   .board {
-      background-color: black;
-      display: inline-block;
-      margin-top: 50px;
-      border-top: 1px solid #999;
-      border-left: 1px solid #999;
-      padding: 10px;
-      background-color: #555;
-
-   }
+.board {
+   background-color: black;
+   display: inline-block;
+   border-top: 1px solid #999;
+   border-left: 1px solid #999;
+   padding: 10px;
+   background-color: #555;
    .rowrow {
       line-height: 5px;
       overflow: hidden
@@ -20,12 +17,65 @@
       width: 11px;
       height: 11px;
       background-color: #000;
-      &.young {
-         background-color: #888;
-      }
-      &.adult {
-         background-color: #fff;
-      }
-
-
    }
+   &.adult-color-white {
+      .cell{
+         &.adult {
+            background-color: #fff;
+         }
+         &.young {
+            background-color: #888;
+         }
+      }
+   }
+   &.adult-color-red {
+      .cell{
+         &.adult {
+            background-color: #f00;
+         }
+         &.young {
+            background-color: #800;
+         }
+      }
+   }
+   &.adult-color-green {
+      .cell{
+         &.adult {
+            background-color: #0f0;
+         }
+         &.young {
+            background-color: #080;
+         }
+      }
+   }
+   &.adult-color-blue {
+      .cell{
+         &.adult {
+            background-color: #00f;
+         }
+         &.young {
+            background-color: #008;
+         }
+      }
+   }
+   &.adult-color-yellow {
+      .cell{
+         &.adult {
+            background-color: #ff0;
+         }
+         &.young {
+            background-color: #880;
+         }
+      }
+   },
+   &.adult-color-cyan {
+      .cell{
+         &.adult {
+            background-color: #0ff;
+         }
+         &.young {
+            background-color: #088;
+         }
+      }
+   }
+}

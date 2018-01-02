@@ -1,24 +1,41 @@
 .board {
   background-color: black;
   display: inline-block;
-  margin-top: 50px;
   border-top: 1px solid #999;
   border-left: 1px solid #999;
   padding: 10px;
   background-color: #555; }
-
-.rowrow {
-  line-height: 5px;
-  overflow: hidden; }
-
-.cell {
-  display: inline-block;
-  border-right: 1px solid #555;
-  border-bottom: 1px solid #555;
-  width: 11px;
-  height: 11px;
-  background-color: #000; }
-  .cell.young {
-    background-color: #888; }
-  .cell.adult {
+  .board .rowrow {
+    line-height: 5px;
+    overflow: hidden; }
+  .board .cell {
+    display: inline-block;
+    border-right: 1px solid #555;
+    border-bottom: 1px solid #555;
+    width: 11px;
+    height: 11px;
+    background-color: #000; }
+  .board.adult-color-white .cell.adult {
     background-color: #fff; }
+  .board.adult-color-white .cell.young {
+    background-color: #888; }
+  .board.adult-color-red .cell.adult {
+    background-color: #f00; }
+  .board.adult-color-red .cell.young {
+    background-color: #800; }
+  .board.adult-color-green .cell.adult {
+    background-color: #0f0; }
+  .board.adult-color-green .cell.young {
+    background-color: #080; }
+  .board.adult-color-blue .cell.adult {
+    background-color: #00f; }
+  .board.adult-color-blue .cell.young {
+    background-color: #008; }
+  .board.adult-color-yellow .cell.adult {
+    background-color: #ff0; }
+  .board.adult-color-yellow .cell.young {
+    background-color: #880; }
+  .board .cell.adult, .board.adult-color-cyan .cell.adult {
+    background-color: #0ff; }
+  .board .cell.young, .board.adult-color-cyan .cell.young {
+    background-color: #088; }

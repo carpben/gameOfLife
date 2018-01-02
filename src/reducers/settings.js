@@ -1,19 +1,24 @@
-import {DEFAULT} from '../CONSTS'
+import OPTIONS from '../CONSTS'
 
 const init = {
-   rows: DEFAULT.ROWS,
-   columns: DEFAULT.COLUMNS,
-   randomRate: DEFAULT.RANDOM_RATE,
-   bornMin: DEFAULT.BORN_MIN,
-   bornMax: DEFAULT.BORN_MIN,
-   existMin: DEFAULT.EXIST_MIN,
-   existMax: DEFAULT.EXIST_MAX,
-   lifeSpan: DEFAULT.LIFESPAN_MS,
-   adultColor: DEFAULT.ADULT_COLOR
+   [OPTIONS.ROWS.name]: OPTIONS.ROWS.DEFAULT,
+   [OPTIONS.COLUMNS.name]: OPTIONS.COLUMNS.DEFAULT,
+   [OPTIONS.RANDOM_RATE.name]: OPTIONS.RANDOM_RATE.DEFAULT,
+   [OPTIONS.GENERATION_SPAN.name]: OPTIONS.GENERATION_SPAN.DEFAULT,
+   [OPTIONS.BORN_MIN.name]: OPTIONS.BORN_MIN.DEFAULT,
+   [OPTIONS.BORN_MAX.name]: OPTIONS.BORN_MAX.DEFAULT,
+   [OPTIONS.EXIST_MIN.name]: OPTIONS.EXIST_MIN.DEFAULT,
+   [OPTIONS.EXIST_MAX.name]: OPTIONS.EXIST_MAX.DEFAULT,
+   [OPTIONS.ADULT_COLOR.name]: OPTIONS.ADULT_COLOR.DEFAULT,
 }
 
 const settings = (state=init, action) => {
    switch (action.type) {
+      case "SET_SETTING_VAL":
+      console.log("setsettingVal, reducer")
+         const {name, val} = action
+         console.log(`name=${name} val=${val}`)
+         return {...state, [name]:val}
       case "CHANGE_ROWS":
          const rows = action.val
          return {...state, rows}

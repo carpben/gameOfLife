@@ -3,6 +3,15 @@ export const toggleAboutDrawer = () => ({
    type: "TOGGLE_ABOUT_DRAWER"
 })
 
+export const setSettingVal = (name, val) => {
+   console.log("action setSettingVal")
+   console.log(`name=${name} val=${val}`)
+   return {
+      type: "SET_SETTING_VAL",
+      name,
+      val
+   }
+}
 export const changeRows = (val) => ({
    type: "CHANGE_ROWS",
    val
@@ -42,6 +51,20 @@ export const populateRandomBoard = () =>
       })
    }
 
+export const cellClicked = (rowIndex, colIndex) =>
+   (dispatch, getState) => {
+      const running = getState().current.running
+      console.log("running", running)
+      if (!running){
+         dispatch({
+            type: "CELL_CLICKED",
+            rowIndex,
+            colIndex
+         })
+      }
+   }
+
+
 export const start = () =>
    (dispatch, getState) => {
       dispatch({
@@ -75,7 +98,9 @@ export const nextGeneration = () =>
    (dispatch, getState) => {
       const state = getState()
       const {bornMin, bornMax, existMin, existMax} = state.settings
-      console.log(`bornMin==${bornMin}`)
+      console.log("actions nextGeneration")
+      console.log(`bornMin=${bornMin} bornMax==${bornMax} existMin==${existMin} existMax==${existMax} `)
+
       dispatch({
          type:"NEXT_GENERATION",
          bornMin, bornMax, existMin, existMax

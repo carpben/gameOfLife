@@ -1,14 +1,12 @@
-.ControlPanel {
-  width: 1000px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
+.ControlPanel .cp-inner-w {
+  width: 200px;
   margin: 40px auto 0 auto;
-  display: flex; }
-  .ControlPanel .board-control {
-    text-align: left; }
-    .ControlPanel .board-control .rows, .ControlPanel .board-control .columns {
-      display: inline-block;
-      padding: 0 5px; }
-  .ControlPanel small {
-    display: block; }
+  text-align: left; }
+  .ControlPanel .cp-inner-w > section {
+    margin: 15px auto; }
+
+.ControlPanel h4 {
+  margin-bottom: 0; }
+
+.ControlPanel small {
+  display: inline-block; }
